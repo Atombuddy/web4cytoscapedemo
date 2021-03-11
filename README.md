@@ -1,4 +1,4 @@
-# web4cytoscape.js
+# web4cytoscapeDemo.js
 #### Greetings.This is just a **Demo** site. Dont mind the CSS and UI. 
 
 To run this Demo
