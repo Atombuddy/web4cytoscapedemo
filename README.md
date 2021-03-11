@@ -4,8 +4,7 @@
 To run this Demo
   - Make sure Cytoscape is installed and running.
   - Clone or download this repository or download and unzip a copy of this example.
+  - Open the webpage by
+    - Running the index.html file 
   
-Open the webpage by
-  Running the index.html file 
-  
-- You can use the "Getting Started" button on the top right corner of the Opened page to gain some insights.
+#### You can use the "Getting Started" button on the top right corner of the Opened page to gain some insights.
