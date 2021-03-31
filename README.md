@@ -3,7 +3,7 @@
 
 1.You can use the below link to get an overview of the demo.Make sure to open a cytoscape instance.
 
-# [INTERACTIVE LIVE DEMO](https://raw.githack.com/Atombuddy/web4cytoscapedemo/main/index.html)
+# [INTERACTIVE LIVE DEMO](http://raw.githack.com/Atombuddy/web4cytoscapedemo/main/index.html)
   
                 OR
 
