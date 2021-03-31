@@ -11,4 +11,4 @@
 
 2.You can also use the below link to get an overview of the demo.Make sure to open a cytoscape instance.
 
-[# DEMO](https://raw.githack.com/Atombuddy/web4cytoscapedemo/main/index.html)
+[LIVE DEMO](https://raw.githack.com/Atombuddy/web4cytoscapedemo/main/index.html)
