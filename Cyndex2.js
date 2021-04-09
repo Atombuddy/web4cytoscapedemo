@@ -250,6 +250,7 @@ class Cyndex2{
     }}
 
     async openSample(button) {
+       console.log("HELLO") 
        const path=document.getElementById("mySampleFile").value
        var filepath=""
        if(path==""){
