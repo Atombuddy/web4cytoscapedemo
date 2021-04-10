@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cytoscape Web</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://unpkg.com/ndex-client@0.0.2/dist/build/bundle.js"></script>
+    <script src="https://unpkg.com/cytoscape-cx2js@0.6.4/build/bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.17.0/cytoscape.min.js" integrity="sha512-IawH7O9E5azuuGrjPfWpcrniP8gqS0BL9Dr0zw/1cK81cGSgBcABfJUgHi9YvychZt+5SkQYEFeCvBOs0tilxA==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,900;1,700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/images/favicon.ico">
+
+</head>
+<body>
+  <div style="margin-top: 20px; border-radius: 30px;" class="bg-danger container" id="loginstyle">
+    <div class="row">
+      <h2 class="heading" style="align-content: center;">Login to your NDEx account</h2> 
+      <div class="col-sm-10">
+      <form onsubmit="ndex.setBasicAuth(document.getElementById('ndex-username').value,document.getElementById('ndex-password').value);document.getElementById('login').className='btn btn-success';return false">
+        <label for="ndex-username"><h4>NDEx User ID:</h4></label>
+        <input type="text" id="ndex-username" name="ndex-username" value="atombuddy"><br><br>
+        <label for="ndex-password"><h4>NDEx Password:</h4></label>
+        <input type="password" id="ndex-password" name="ndex-password" value="atombuddy123"><br><br>
+        <input type="submit" class="btn btn-primary" id="login" value='Initialize NDEx JavaScript Client'>
+      </form>
+      <h3 style="margin-left: 15px;">Don't have an account? <button class="btn btn-dark"><a href="http://ndexbio.org">Signup</a></button></h3>
+    </div> 
+    <div class="col-sm-2">
+    <div style="border-radius: 30px;  ">
+      <a href="Tutorial.html" class="btn btn-success" target="_blank">Getting Started</a>
+    </div>
+  </div>
+  </div>   
+  </div>
+  <br>
+
+  <div class="container" id="searchstyle" >
+    <div class="text-center" id="searchdiv">
+      <div id="searchbox">
+       <input type="text" id="search" name="search-network" size="30" placeholder="Enter the Name of the Network">
+       <button type="button" class="btn-md btn-primary" style="margin-top:20px; border-radius: 5px;" onclick="searchNetwork(document.getElementById('search').value,this)";return false;>Search</button>
+      </div>
+      <div id="searchResults"></div>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <div class="bg-success container" id="cyndexstyle">
+    <script src="Cyndex2.js"></script>
+    <h2 class="heading">Cyndex Functions</h2>
+      <div class="row">
+        <div class="col-sm-6">
+          <h3>Import Network to local Cytoscape from NDEx</h3>
+          <button type="button" class="btn-md btn-primary" onclick='cyndex.importNetwork(document.getElementById("ndex-username").value, document.getElementById("ndex-password").value,this)'>Import Network To Cytoscape</button><br>  
+        </div>
+        <div class="col-sm-6">
+          <h3>Get Current Network Summary</h3>       
+          <button type="button" class="btn-md btn-primary"  onclick="cyndex.currentNetworkSummary(this)">Get Current summary</button>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-6">
+          <h3>Export Network to  NDEx</h3>
+          <button type="button" class="btn-md btn-primary"  onclick='cyndex.exportNetwork(document.getElementById("ndex-username").value, document.getElementById("ndex-password").value,this)'>Export</button>
+        </div>
+        <div class="col-sm-6">
+          <h3>Import a Sample Session.</h3>
+          <h5>If the Input field is Empty Default Session will be Opened</h5>
+          <input type="text" id="mySampleFile" placeholder="Enter the File path">
+          <button type="button" class="btn-md btn-primary"  onclick='cyndex.openSample(this)'>Import</button>
+        </div>
+      </div>
+        
+  </div>
+  <br>
+  <br>
+
+  <div class="container" id="viewstyle">
+    <script src="NetworkViews.js"></script>    
+    <h2 class="heading">Network View</h2>
+    <div class="row">
+      <div class="col-sm-4">
+        <h3>Get Current Network View</h3>
+        <button type="button" class="btn-md btn-primary" onclick="networkview.networkView(this)">Get Network View</button>
+      </div>
+      <div class="col-sm-4">
+        <h3>Get Image of the Network</h3>
+        <button type="button" class="btn-md btn-primary" onclick="networkview.getImage(this)">Get Image</button>
+        <a id="image"></a>
+      </div>
+      <div class="col-sm-4">
+        <h3>Get PDF Format of the Network</h3>
+        <button type="button" class="btn-md btn-primary" onclick="networkview.getPdf(this)">Get PDF</button>
+        <a id="pdf"></a>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <div class="container" id="layoutstyle">
+    <script src="Layouts.js"></script>
+        <h2 class="heading">Layouts</h2>
+        <div class="row">
+          <div class="col-sm-4">
+        <div>
+          <h3>Get Available Layouts</h3>
+          <button type="button" class="btn-md btn-primary" onclick="layout.getAllLayout(this)" id="layoutButton">Get Layouts</button>
+          <div id="dropDownList"></div>
+        </div>    
+      </div>
+      <div class="col-sm-5">
+        <div>
+          <h3>Get Details of a Layout Algorithm</h3>
+          <button type="button" class="btn-md btn-primary" onclick="layout.getInfoLayout(this)">Get Description</button>
+        </div>    
+      </div>
+      <div class="col-sm-3">
+        <div>
+          <h3>Apply a Layout </h3>
+          <button type="button" class="btn-md btn-primary" onclick="layout.applyLayout(this)">Apply</button>
+        </div>    
+      </div> 
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <div class="container" id="visualstyle">
+      <script src="VisualStyles.js"></script>
+      <div class="row">
+        <h2 class="heading">Visual Styles</h2>
+        <div class="col-sm-5">
+      <div>
+        <h3>Get List of all Visual Style Names</h3>
+        <button type="button" class="btn-md btn-primary" id="visualbutton" onclick="visualstyle.getVisualList(this)">Get Styles</button>
+        <div id="visualList"></div>
+      </div> 
+    </div> 
+    <div class="col-sm-4">
+      <div >
+        <h3>Get Current Visual Style</h3>
+        <button type="button" class="btn-md btn-primary" onclick="visualstyle.getCurrentVisual(this)">Get Description</button>
+      </div>    
+    </div>  
+    <div class="col-sm-3">
+      <div >
+        <h3>Apply Visual Style</h3>
+        <button type="button" class="btn-md btn-primary" onclick="visualstyle.apply(this)">Apply</button>
+      </div>    
+    </div>  
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <div class="container" id="analyzestyle">
+    <script src="Analyze.js"></script>
+    <h2 class="heading">Network Analyzer</h2>
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h3>Analyze the Network</h3>
+        <button type="button" class="btn-md btn-primary" onclick="analyze(directed=true,this)">Analyze</button>
+      </div>    
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="container" id="plotstyle">
+      <script src="Plot.js"></script>
+      <h2 class="heading">Chart Plotter</h2>
+      <div class="row">
+        <div class="col-sm-6">
+      <div>
+        <h3>Get a Histogram Plot</h3>
+        <button type="button" class="btn-md btn-primary" onclick="plot.histPlot(this)">Plot</button>
+      </div>    
+    </div>
+    <div class="col-sm-6">
+      <div>
+        <h3>Get a Scatter Plot</h3>
+        <button type="button" class="btn-md btn-primary" onclick="plot.scatterPlot(this)">Plot</button>
+      </div>    
+    </div>
+    </div>
+  </div>
+  <br>
+  <br>
+
+
+
+
+
+
+
+
+<div class="container" id="filterstyle">
+  <script src="Filter.js"></script>
+  <h2 class="heading">Perform Filtering</h2>
+  <div class="row">
+    <div class="col-sm-4">
+  <div>
+    <h3>Apply Filter</h3>
+    <button type="button" class="btn-md btn-primary" onclick="filter.apply(this)">Apply</button>
+  </div>    
+</div>
+<div class="col-sm-4">
+  <div>
+    <h3>Create a Filter</h3>
+    <button type="button" class="btn-md btn-primary" onclick="filter.create(this)">Create</button>
+  </div>    
+</div>
+<div class="col-sm-4">
+  <div>
+    <h3>Delete a Filter</h3>
+    <button type="button" class="btn-md btn-primary" onclick="filter.delete(this)">Delete</button>
+  </div>    
+</div>
+<br>
+<div class="row">
+  <div style="margin-left: 15px; margin-bottom: 10px;" class="col-sm-12">
+    <h3>Import a Filter</h3>
+    <input type="text" id="myFile" placeholder="Enter the File path">
+    <button type="button" class="btn-md btn-primary" onclick="filter.import(this)">Import</button>
+  </div>
+</div>  
+
+
+</div>
+</div>
+<div class="container" id="Select">
+  <script src="Select.js"></script>
+  <div class="row">
+    <h2 class="heading">Selection and Sub-Network Creation</h2>
+    <div class="col-sm-4">
+  <div>
+    <h3>Select the Neighbors of the node</h3>
+    <input type="text" id="nodename" placeholder="Name of the node">
+    <button type="button" class="btn-md btn-primary" onclick="select.allNeighbors(this)">Get First Neighbors</button>
+  </div> 
+</div>   
+<div class="col-sm-4">
+  <div class="text-center">
+    <h3>Invert Nodes and Edges Selection</h3>
+    <button type="button" class="btn-md btn-primary" onclick="select.invert(this)">Invert</button>
+  </div> 
+</div>   
+  <div class="col-sm-4">
+  <div>
+    <h3>Create Sub-Network</h3>
+    <input type="text" id="subnetworkname" placeholder="Name for the Subnetwork">
+    <button type="button" class="btn-md btn-primary" onclick="select.subNetwork(document.getElementById('subnetworkname').value,this)">Create Subnetwork</button>
+  </div>    
+</div>
+</div>
+</div>
+
+
+<div class="container" id="merge">
+  <script src="Merge.js"></script>
+<div class="row">
+  <div class="container">
+  <h2 class="heading">Advanced Network Merge</h2>
+  <br>
+  <div class="row">
+    <div class="col-lg-2">
+      <select onclick="merge.availableNetworks()" name="availnet" id="availablenetworks">
+        <option disabled hidden selected>Available Networks</option>
+      </select>
+    </div>
+    <div class="col-sm-2">
+      <select class="form-select multiple" onchange="merge.operation(this)">
+        <option disabled hidden selected>Choose an Operation</option>
+        <option value="union" >Union</option>
+        <option value="intersection">Intersection</option>
+        <option value="difference">Difference</option>
+      </select>
+    </div>
+
+    <div class="col-sm-2" id="mergedname">
+      <input type="text" onchange="merge.mergename(this)" size="20" placeholder="Merged Network Name" >
+    </div>
+    <div class="col-sm-2">
+      <select class="form-select" id="samenet">
+        <option disabled hidden selected>In network Merge</option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+    </div>
+    <div class="col-sm-4 text-center">
+      <select class="form-select" id="nodesonly">
+      <option disabled hidden selected>Nodes only(Ignore edges)</option>
+      <option value="true">True</option>
+      <option value="false">False</option>
+    </select>
+    </div>
+  </div>
+  </div>
+</div>
+
+<br>
+<br>
+
+
+<div id="fullmerge">
+  <hr>
+<div class="row">
+  <div class="row">
+  <div class="container networkscroll">
+  <div class="row">
+    <div class="col-sm-12" id="finalNetmapCol">
+      <h4 class="text-center">Network Column Matcher</h4>
+    </div>
+  </div>
+</div>
+  </div>
+
+<br>
+<hr>
+<br>
+
+ <div class="row">
+<div class="container nodescroll" >
+  <div class="row">
+    <div class="row">
+    <div class="col-sm-12" id="finalNodeCol">
+      <h4 class="text-center">Node Keys</h4>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-12" id="finalNodemapCol">
+      <h4 class="text-center">Node Column Matcher</h4>
+    </div>
+  </div>
+  </div>
+</div>
+</div> 
+
+<br>
+<hr>
+<br>
+
+<div class="row">
+<div class="container edgescroll">
+
+  <div class="row">   
+    <div class="row">
+    <div class="col-sm-12" id="finalEdgeCol">
+      <h4 class="text-center">Edge Keys</h4>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-12" id="finalEdgemapCol">
+      <h4 class="text-center">Edge Column Matcher</h4>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+
+<br>
+
+
+<div class="row">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <button type="button" class="btn mergebutton" onclick="merge.Merge()">Merge</button>
+    </div>
+  </div>
+</div>  
+</div>
+</div>
+</div>
+
+<hr>
+
+<!--Demo-->
+<div class="container" id="demobox">
+  <h2 class="heading">Demo</h2>
+  <button id="demoButton" class="btn" type="button" style="margin-top: 20px;margin-left:20px;" onclick="addNode()">Add a Node</button>
+  <button id="demoButton" class="btn" type="button" style="margin-top: 20px;margin-left:20px;"id="addedge" title="Select two nodes from the below container to add an edge" onclick="addEdge(this)">Add an Edge</button>
+  <button id="demoButton" class="btn" type="button" style="margin-top: 20px;margin-left:20px ;" onclick="getExample(this)">Get an Example graph</button>
+  <button id="demoButton" class="btn" type="button" style="margin-top: 20px;margin-left:20px ;" id="bfs" title="Select the starting Node" onclick="bfs(this)">Apply BFS</button>
+  <button id="demoButton" class="btn" type="button" style="margin-top: 20px;margin-left:20px ;" id="dfs" title="Select the starting Node" onclick="dfs(this)">Apply DFS</button>
+  <button id="demoButton" class="btn" type="button" style="margin-top: 20px;margin-left:20px ;" onclick="zoomIn()">Zoom In</button>
+  <button id="demoButton" class="btn" type="button" style="margin-top: 20px;margin-left:20px ;" onclick="zoomOut()">Zoom Out</button>
+  <button id="demoButton" class="btn" type="button" style="margin-top: 20px;margin-left:20px ;" onclick="getJpg(this)">Get JPG</button>  
+<a id="image"></a>
+</div>
+
+<div class="container">
+  <script src="Demo.js"></script>    
+  <div id="cy">
+  </div>
+</div>   
+
+</body>
+</html>
