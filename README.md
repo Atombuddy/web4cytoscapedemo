@@ -1,7 +1,7 @@
 # web4cytoscapeDemo.js
 #### Greetings.This is just a **Demo** site. Dont mind the CSS and UI. 
 
-1.You can use the below link to get an overview of the demo.Make sure to open a ** CYTOSCAPE APP ** and have an INTERNET connection.
+1.You can use the below link to get an overview of the demo.Make sure **CYTOSCAPE APP** is running and have an **INTERNET** connection.
 
 # [INTERACTIVE LIVE DEMO](http://raw.githack.com/Atombuddy/web4cytoscapedemo/main/index.html)
   
