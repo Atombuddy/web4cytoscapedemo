@@ -13,5 +13,3 @@
   - Open the webpage by
     - Running the index.html file 
 
-
-#### You can use the "Getting Started" button on the top right corner of the Opened page to gain some insights.
