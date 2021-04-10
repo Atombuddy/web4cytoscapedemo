@@ -1,0 +1,310 @@
+.heading{
+    text-align: center;
+}
+.demobody{
+background: wheat;
+}
+
+#brand-name{
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 6px;
+}
+
+.main-head{
+    font-family: 'Open Sans', sans-serif;
+    color:black;
+}
+body{
+    background: #c0c0c0;
+    font-family: 'Open Sans', sans-serif;
+    color:black;
+
+}
+
+
+.heading header{
+    font-family: 'Merriweather', serif;
+}
+
+/*a{
+    color: white;
+}*/
+
+
+button{
+    margin-bottom: 15px; border-radius: 5px;
+    margin-left: 10px;
+}
+#cy {
+    width: 85%;
+    height: 90%;
+    position:absolute;
+    margin-top:30px;
+    border: 5px solid rgb(247, 17, 1);
+
+}
+#inbox{
+    width:30%;
+    height:50%;
+    margin-top: 130px;
+    margin-left: 100px;
+    position:absolute;
+    border:3px solid black;
+}
+
+#demoButton{
+    background-color:#10eccf;
+    margin-bottom: 15px; border-radius: 5px;
+}
+
+#loginstyle{
+    background: linear-gradient(70deg,#0fefa9 45%,#0feeef 50%);
+    border-radius: 30px;
+}
+#searchstyle{
+    margin-top: 10px;
+}
+
+#cyndexstyle{
+    background: linear-gradient(70deg,#fdcd3b 45%,#ffed4b 50%);
+    
+    border-radius: 30px;
+    
+}
+
+#viewstyle{
+    background: linear-gradient(70deg,#fa7c30 45%,#ffaa77 50%);
+    border-radius: 30px;
+}
+
+#tablestyle{
+    background: linear-gradient(70deg,#ff6464 45%,#5ac8fa 50%);
+    border-radius: 30px;
+}
+
+#layoutstyle{
+    background: linear-gradient(70deg,#9934cc 45%,#c03fff 50%);
+    border-radius: 30px;
+}
+
+#visualstyle{
+    background: linear-gradient(70deg,#fff810 45%,#63e893 50%);
+    border-radius: 30px;
+}
+
+#analyzestyle{
+    background: linear-gradient(70deg,#ff7ee3  45%,#bd13d2 50%);
+    border-radius: 30px;
+}
+
+#plotstyle{
+    background: linear-gradient(70deg,#faba71 45%,#eb5c1f 50%);
+    border-radius: 30px;
+}
+
+#filterstyle{
+    background: linear-gradient(70deg,#25c2ab 45%,#0a9cee 50%);
+    border-radius: 30px;
+    margin-bottom: 40px;
+}
+#demobox{
+    background: #982bec;
+    border-radius: 30px;
+    margin-top: 10px;
+}
+.optionSelect{
+    background-color: blue;
+}
+
+.networkscroll{
+    display: flex;
+    flex-wrap:row wrap;
+    overflow-x: auto;
+    margin-right: 15px;
+}
+.networkscroll > .row{
+    flex:0 0 auto;
+}
+
+.nodescroll{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-right: 15px;
+}
+.nodescroll > .row{
+    flex:0 0 auto;
+}
+.edgescroll{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-right: 15px;
+}
+.edgescroll > .row{
+    flex:0 0 auto;
+}
+
+#fullmerge{
+    display: none;
+}
+
+#merge{
+    background-color:#478ba2;
+    border-radius: 30px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+#finalNetmapCol{
+    background-color: #faddaf ; 
+}
+
+#finalNodeCol{
+    background-color: #f5be65;   
+}
+
+#finalNodemapCol{
+    background-color: #fab444;   
+}
+#finalEdgeCol{
+    background-color: #f3a629;   
+    flex:0 0 auto;
+}
+
+#finalEdgemapCol{
+    background-color:  #fc9d06;   
+    flex:0 0 auto;
+}
+
+select{    
+    
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+
+#Select{
+    background: linear-gradient(70deg,#ffdde1 45%,#ee9ca7 50%);
+    border-radius: 30px;
+    margin-bottom: 40px;
+    
+}
+
+.mergebutton{
+    background-color: rgb(244, 248, 7);
+}
+
+hr{
+    border: 1px solid black;
+}
+
+
+
+@media (min-width: 992px){
+	.fas{
+        padding-left: 10px;
+    }
+
+	.dropdown-menu .dropdown-menu{
+        margin-left:0; 
+        margin-right: 0;
+	}
+    
+	.dropdown-menu li{
+        position: reltive;
+        
+	}
+	.nav-item .submenu{ 
+		display: none;
+		position: absolute;
+        left:100%; top:-7px;
+        
+    }
+    
+	.dropdown-menu > li:focus-within{ background-color: #f1f1f1 }
+	.dropdown-menu > li:focus-within > .submenu{
+        display: block;
+	}
+
+	.no-bullet{
+		list-style-type: none;
+	}
+}
+
+.status-panel{
+    height: 91vh;
+    width: 100%;
+    background: #c0c0c0;
+}
+
+.verline{
+    border: 1px solid black;
+    height: 91vh;
+}
+
+.main-panel{
+    height:91vh;
+    width: 100%;
+    background: wheat;
+    
+}
+
+#main-nav{
+    background-color:#0fefa9;
+    height: 40px;
+   
+}
+
+.side-pane{
+    display: flex;
+}
+
+.birdView{
+    width:99%;
+    height:50%;
+    margin-top: 88%;
+    position:absolute;
+    border:3px solid rgb(4, 0, 255);
+    background: white;
+}
+
+
+
+header .is-active{
+    background-color:yellowgreen;
+}
+
+.pages{
+    border: 2px solid black;
+    height: 82vh;
+    margin: 3px;
+}
+
+.pages .page{
+    display: none;
+}
+.pages .page.is-active{
+    display: block;
+}
+
+.availablenetworks {
+    margin: 0 auto;
+    display: flex;
+    margin-top: 30px;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+.node{
+    margin-left: 34%;
+    
+}
+.edge{
+    margin-left:35.8%;
+}
+.layout{
+    margin-left: 32.2%;
+}
+.status-style{
+    margin-left: 38.2%;
+}
