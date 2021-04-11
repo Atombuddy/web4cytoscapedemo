@@ -22,7 +22,7 @@ function failureButton(element){
   element.className="btn btn-danger"
   element.innerHTML="Failed"
 }
-
+console.log("Make sure you are Connected to Internet and Cytoscape App is Open")
 async function getCurrent(){
   const geturl=CYREST_BASE_URL +"/v1/networks/currentNetwork"
   try{
