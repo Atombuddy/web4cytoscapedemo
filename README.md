@@ -3,7 +3,7 @@
 
 1.You can use the below link to get an overview of the demo.Make sure **CYTOSCAPE APP** is running and you have an **INTERNET** connection.
 
-## [INTERACTIVE LIVE DEMO](https://raw.githack.com/Atombuddy/web4cytoscapedemo/main/index.html)
+## [INTERACTIVE LIVE DEMO](https://google.com)
   
                 OR
 
