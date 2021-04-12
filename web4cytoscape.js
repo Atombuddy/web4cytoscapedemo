@@ -14,6 +14,7 @@ var network_view_SUID=undefined;
 const CYREST_BASE_URL = 'http://127.0.0.1:1234';
 const ndex_url="http://www.ndexbio.org/v2";
 
+console.log("Make Sure Cytoscape App is Open and you are connected to the Internet")
 function successButton(element) {
   element.className="btn btn-success"
   element.innerHTML="Success"
